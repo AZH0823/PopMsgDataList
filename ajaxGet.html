@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajax get Data  -  第一題練習</title>
+  <style>
+  body{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+  input{
+    border:0;
+    background-color:#003C9D;
+    margin: 0 auto;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+  }
+
+  input:hover{
+    color:#003C9D;
+    background-color:#fff;
+    border:2px #003C9D solid;
+  }
+
+  .dataList{
+    overflow: auto;
+    height: 500px;
+    width: 500px;
+  }
+  </style>
+</head>
+<body>
+  <input type="button" value="getData with Ajax" name="按鈕" style="width:150px;height:50px;" id="get">
+  <ol class="dataList"></ol>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous">
+  </script>
+  <script>
+    const dataList = [];
+    $("#get").click(function(){
+        // console.log("getData");
+        $.ajax({
+          url:'https://testnet.binancefuture.com/dapi/v1/premiumIndex',
+          method:'GET',
+          dataType:'json',
+          success:function(res){
+            // console.log(res)
+            res.forEach((el) => {
+              dataList.push(el)
+              $('.dataList').append('<li>'+el.symbol+'</li>'); 
+            });
+            // console.log(dataList)
+          },
+          error:function(err){console.log(err)},
+        });
+    });
+
+  </script>
+</body>
+</html>
