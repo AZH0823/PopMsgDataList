@@ -1,0 +1,174 @@
+body {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+
+  overflow: hidden;
+}
+
+body::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: -1;
+  background-image: url(../images/bg_sky.jpg);
+  /* background-repeat: no-repeat, no-repeat; */
+  background-size: cover;
+  /* background-position: center 80px; */
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2% 3%;
+  height: 90vh;
+  width: 1200px;
+  overflow: hidden;
+}
+
+h1,
+p {
+  text-align: center;
+  color: whitesmoke;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+p {
+  text-align: right;
+}
+
+h1:hover {
+  text-shadow: 0 0 10px #3498DB,
+    0 0 20px #3498DB,
+    0 0 30px #3498DB,
+    0 0 40px #2980B9,
+    0 0 70px #2980B9,
+    0 0 80px #2980B9,
+    0 0 100px #2980B9,
+    0 0 150px #2980B9;
+}
+ul.counter > li{
+  text-shadow: 0 0 10px #3498DB,
+    0 0 20px #3498DB,
+    0 0 30px #3498DB,
+    0 0 40px #2980B9,
+    0 0 70px #2980B9,
+    0 0 80px #2980B9,
+    0 0 100px #2980B9,
+    0 0 150px #2980B9;
+  filter: hue-rotate(72deg);;
+}
+
+ul.counter > li:hover{
+  transition: .85s ease-in filter;
+  filter: hue-rotate(335deg);;
+}
+
+/* button css */
+button {
+  background-color: transparent;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+
+  display: block;
+  margin: 20px auto;
+}
+
+.btn {
+  text-decoration: none;
+  border: 1px solid rgb(146, 148, 248);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(146, 148, 248, 0.4),
+      transparent);
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+/* 計數器 */
+.counter-view {
+  margin: 50px auto;
+  padding: 2% 3%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  max-width: 650px;
+
+  color: white;
+  outline: 1px solid white;
+  border-radius: 3px;
+}
+
+.counter-view h6 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.counter {
+  width: 80%;
+  display: flex;
+  padding: 0;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.counter li {
+  position: relative;
+
+  list-style: none;
+  flex-grow: 1;
+  font-size: 3rem;
+}
+
+.counter li::before {
+  content: attr(data-content);
+  display: block;
+  position: absolute;
+  bottom: -30%;
+  font-size: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dataList {
+  color: white;
+  height: 80vh;
+  overflow: auto;
+}
+
+
+@media (max-width: 428px) {
+  .counter li {
+    font-size: 2.2rem;
+  }
+}
