@@ -30,6 +30,8 @@ body::before {
   height: 100vh;
   width: 1200px;
   overflow: hidden;
+
+  position: relative;
 }
 
 h1,
@@ -40,8 +42,15 @@ p {
   cursor: pointer;
 }
 
+.date-title{
+  position: absolute;
+  right: 3%;
+  top: 3%;
+}
+
 p {
   text-align: right;
+  line-height: .85;
 }
 
 h1:hover {
@@ -124,6 +133,8 @@ button {
   justify-items: center;
   max-width: 650px;
 
+  position: relative;
+
   color: white;
   outline: 1px solid white;
   border-radius: 3px;
@@ -183,5 +194,8 @@ button {
   }
   .dataList{
     margin: 40px 0;
+  }
+  .date-title{
+    display: none;
   }
 }

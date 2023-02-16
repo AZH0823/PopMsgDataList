@@ -28,9 +28,12 @@
   <div id="app">
     <!-- <button @click="getApiData">拿資料</button> -->
      <h1>Coutdown my Date</h1>
-     <p>今天日期為:{{nowDate.toLocaleDateString()}} </p>
-     <p>截止日期為:{{finshedData.toLocaleDateString()}} </p>
+    
      <div class="counter-view">
+      <div class="date-title">
+        <p>今天日期為:{{nowDate.toLocaleDateString()}} </p>
+        <p>截止日期為:{{finshedData.toLocaleDateString()}} </p>
+      </div>
       <h6>Your</h6>
         <ul class="counter">
           <li class="days" data-content="Days">{{display.days}}</li>
